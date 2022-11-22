@@ -38,9 +38,30 @@ alert("Button Clicked")
 // document.body.classList.add("pink");
 // });
 
+// Making a button change text after being clicked once
 clickMeButton.addEventListener("click", function changeTest(){
     if (clickMeButton.textContent === "Click Me")
     {clickMeButton.textContent = "Click me again?"}
     
 })
 
+
+function createAddButton(){
+    const purple_button = document.createElement("button");
+    purple_button.textContent = "Purple?";
+    purple_button.addEventListener("mouseover", changeBGPurple)
+    document.body.appendChild(purple_button)
+}
+clickMeButton.addEventListener("click", createAddButton)
+
+function createParagraph(){
+    const purple_par = document.createElement("p");
+    purple_par.textContent = "Grapes?";
+    purple_par.addEventListener("mouseover", changeBGPurple)
+    document.body.appendChild(purple_par)
+}
+clickMeButton.addEventListener("click", createParagraph)
+
+function changeBGPurple(event){
+    event.target.classList.add("purple_background");
+}
