@@ -65,3 +65,15 @@ clickMeButton.addEventListener("click", createParagraph)
 function changeBGPurple(event){
     event.target.classList.add("purple_background");
 }
+
+
+const buttonContainer = document.querySelector(".ButtonContainer");
+buttonContainer.addEventListener("mouseover", function changeBGPurple(event){
+    event.target.classList.add("purple_background");
+})
+
+buttonContainer.addEventListener("click", paraToColor)
+
+function paraToColor(event){
+    event.target.style.color = event.target.textContent;
+};
